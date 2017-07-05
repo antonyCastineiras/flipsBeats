@@ -3,12 +3,17 @@
   <head>
     <title>FlipsBeats</title>
     <%= csrf_meta_tags %>
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<% if current_admin %>
+			<%= render partial: 'layouts/navbar' %>
+  	<% end %>
+  	<div class="container-fluid">
+    	<%= yield %>
+  	</div>
   </body>
 </html>
