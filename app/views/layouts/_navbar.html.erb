@@ -15,7 +15,11 @@
 			<ul class="nav navbar-nav">
 				<li class="<%= active_class('tracks', 'new') %>"><%= link_to "Add Track", new_track_path %></li>
 			</ul>
+			<ul class="nav navbar-nav navbar-right">
+					<li class="cart-text"><%= render 'layouts/cart_text' %></li>
+			</ul>
 		</div>
+
 
 	</div>
 </div>

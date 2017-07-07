@@ -1,0 +1,15 @@
+<div class="well">
+	<div class="row">
+		<div class="col-xs-8">
+			<h4><%= track.name %></h4>
+		</div>
+
+		<div class="col-xs-4">
+			<%= form_for order_item, remote: true do |f| %>
+				<h4 class="text-right">Price: <%= number_to_currency(order_item.unit_price, unit: '£') %></h4>
+				<%= f.hidden_field :track_id, value: track.id %>
+				<%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the track #{order_item.track.name} from your cart"}, method: :delete, remote: true, class: 'btn btn-danger' } %>
+			<% end %> 
+		</div>
+	</div>
+</div>
