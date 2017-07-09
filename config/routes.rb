@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :tracks, only: [:new, :create]
   resources :carts, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
