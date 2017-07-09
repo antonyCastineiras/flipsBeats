@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/admin' => 'pages#admin'
 
   devise_for :admins, controllers: { registrations: 'admins/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   
   resources :tracks, only: [:new, :create]
   resources :carts, only: [:show]
