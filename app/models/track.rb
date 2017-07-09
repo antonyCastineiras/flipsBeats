@@ -1,4 +1,6 @@
 class Track < ApplicationRecord
+	mount_uploader :music_file, MusicFileUploader
+
   belongs_to :admin
   has_many :order_items
 

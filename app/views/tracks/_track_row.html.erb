@@ -6,6 +6,9 @@
 		</div>
 		
 		<div class="col-xs-4">
+			<audio controls>
+				<source src="<%= cloudinary_url(track.name + '.mp3', resource_type: 'video') %>" type="audio/mp3">
+			</audio>		
 			<%= form_for order_item, remote: true do |f| %>
 				<%= f.hidden_field :track_id, value: track.id %>
 				<%= f.submit "Add to cart", class: 'btn btn-primary pull-right' %>

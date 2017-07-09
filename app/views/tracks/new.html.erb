@@ -18,6 +18,11 @@
 		<%= f.number_field :price, class: 'form-control', step: '0.01' %>
 	</div>
 
+	<div class="form-group">
+		<%= f.label :music_file, 'File' %>
+		<%= f.file_field :music_file, class: 'form-control' %> 
+	</div> 
+
 	<div class="actions">
 		<%= f.submit class: 'btn' %>
 	</div>
