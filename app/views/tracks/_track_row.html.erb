@@ -1,15 +1,18 @@
-<div class="well">
+<div class="well track-row">
 	
 	<div class="row">
-		<div class="col-xs-8">
+		<div class="col-xs-2">
 			<h4><%= track.name %></h4>	
 		</div>
+
+		<div class="col-xs-8">
+			<audio controls>
+				<source src="<%= cloudinary_url(track.name + '.mp3', resource_type: 'video') %>" type="audio/mp3">	
+			</audio>		
+		</div>
 		
-		<div class="col-xs-4">
+		<div class="col-xs-2">
 			<div class="row">
-				<audio controls>
-					<source src="<%= cloudinary_url(track.name + '.mp3', resource_type: 'video') %>" type="audio/mp3">	
-				</audio>		
 			</div>
 			<% if current_user %>
 				<%= form_for order_item, remote: true do |f| %>
