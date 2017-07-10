@@ -2,14 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .track-row {
-
-	.audiojs {
-		margin: auto;
-		border-radius: 4px;
-
-		.play-pause {
-			width: initial;
-		}
+	
+	audio {
+		display: block;
+		width: 100%;
+		margin-bottom: 6px;
 	}
 
 
