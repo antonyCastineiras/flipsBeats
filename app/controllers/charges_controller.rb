@@ -14,11 +14,11 @@ class ChargesController < ApplicationController
 			)
 
 		charge = Stripe::Charge.create(
-				customer: customer.id,
-				amount: @amount_in_pence,
-				description: 'Rails Stripe customer',
-				currency: 'gbp'
-			)
+			customer: customer.id,
+			amount: @amount_in_pence,
+			description: 'Rails Stripe customer',
+			currency: 'gbp'
+		)
 
 		if charge["paid"] == true
 			@order.order_status_id = 4

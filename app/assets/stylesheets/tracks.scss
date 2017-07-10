@@ -1,3 +1,21 @@
 // Place all the styles related to the Tracks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.track-download-link {
+	font-size: 36px;
+	color: #fafafa;
+	background: #337ab7;
+	border: 1px solid #2e6da4;
+	border-radius: 4px;
+	padding: 4px 6px;
+
+	i {
+		vertical-align: text-top;
+		
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}	

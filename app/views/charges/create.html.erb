@@ -1,1 +1,24 @@
-<h2>Thanks, you paid <strong><%= number_to_currency( @amount, unit: '£') %></strong>!</h2>	
+
+<div class="row">
+	<div class="col-xs-12">
+		<h2 class="text-center">Thanks, you paid <strong><%= number_to_currency( @amount, unit: '£') %></strong>!</h2>
+		<p class="text-center">Click the download button below to download your tracks</p>
+		<div class="row">
+			<div class="col-xs-12 col-md-4 col-md-offset-4">
+				<ul>
+					<% @order.order_items.each do |order_item| %>
+						<li class="list-group-item clearfix">
+							<p class="pull-left"><%= order_item.track.name %></p>
+							<% if current_user.has_purchased?(order_item.track) %>
+								<a href="<%= cloudinary_url(order_item.track.name + '.mp3', resource_type: 'video') %>" class="track-download-link pull-right" download>
+									<i class="glyphicon glyphicon-download"></i>
+								</a>
+							<% end %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>	
+

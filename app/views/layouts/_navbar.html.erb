@@ -20,20 +20,25 @@
 				<% end %>
 
 				<% if current_user %>
-					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					</li>
 				<% end %>
 
 				<% if current_admin %>
 					<li class="<%= active_class('tracks', 'new') %>"><%= link_to "Add Track", new_track_path %></li>
 					<li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
 				<% end %>
-
 			</ul>
+
 			<ul class="nav navbar-nav navbar-right">
-					<li class="cart-text"><%= render 'layouts/cart_text' %></li>
+				<li class="cart-text"><%= render 'layouts/cart_text' %></li>
+				<% if current_user %>
+				<li>
+						<%= link_to "Checkout", new_charge_path %> 
+				</li>
+				<% end %>
 			</ul>
+
 		</div>
-
-
 	</div>
 </div>

@@ -1,1 +1,5 @@
-<%= link_to "#{current_order.order_items.size} Items in cart #{number_to_currency(current_order.subtotal, unit: '£')}", cart_path(current_order.id || 0), class: 'btn btn-link' %>
+<% if current_user %>
+	<%= link_to "#{current_order.order_items.size} Items in cart #{number_to_currency(current_order.subtotal, unit: '£')}", cart_path(current_order.id || 0), class: 'btn btn-link' %>
+<% else %>
+	<p class='navbar-text'>You must <%= link_to "create an account", new_user_registration_path %> to add to cart</p>
+<% end %>

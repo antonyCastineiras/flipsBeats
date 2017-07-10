@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
   helper_method :active_class, :form_errors_for, :current_order, :current_active_user
 
 	def current_order
-		session[:order_id].nil? ? Order.new : Order.find(session[:order_id])
+		if !current_user
+			nil
+		else
+			session[:order_id].nil? ? Order.new(user_id: current_user.id) : Order.find(session[:order_id])
+		end
 	end  
 
 
