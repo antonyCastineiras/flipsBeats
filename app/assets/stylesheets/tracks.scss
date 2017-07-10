@@ -3,9 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .track-row {
 
-	audio {
-		width: 100%;
+	.audiojs {
+		margin: auto;
+		border-radius: 4px;
+
+		.play-pause {
+			width: initial;
+		}
 	}
+
+
 }
 
 
