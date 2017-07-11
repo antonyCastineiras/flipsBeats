@@ -1,6 +1,8 @@
 class ChargesController < ApplicationController
 	def new
-		@amount = current_order.subtotal * 100
+		@order = current_order
+		@order_items = @order.order_items
+		@amount = @order.subtotal * 100
 	end
 
 	def create
