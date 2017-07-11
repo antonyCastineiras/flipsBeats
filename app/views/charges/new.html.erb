@@ -1,27 +1,10 @@
 <div class="row">
   <div class="col-xs-12 col-md-4 col-md-offset-4">
-    <p class="text-center">Once you have completed the payment you will be redirected to a download link and the tracks will be added to your account</p>
+    <p class="text-center ">Once you have completed the payment you will be redirected to a download link and the tracks will be added to your account</p>
     <div class="shopping-cart">
       <%= render 'carts/shopping_cart' %>
     </div>
-    <label class="amount pull-left">
-      <span><strong>Total to pay: </strong><%= number_to_currency(current_order.subtotal, unit: '£') %></span>
-    </label>
-
-    <%= form_tag charges_path, class: 'pull-right' do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
-          </div>
-        <% end %>
-      </article>
-
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="<%= @amount %>"
-              data-locale="auto"></script>
-    <% end %>
+    
+   
   </div>
 </div>

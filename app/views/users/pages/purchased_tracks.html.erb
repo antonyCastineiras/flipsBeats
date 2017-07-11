@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-xs-12 col-md-4 col-md-offset-4">
+		<h4 class="text-center">Your Tracks</h4>
+		<p class="text-center">Here is a list of tracks you have purchased available for redownlaod</p>
+		<ul>
+			<% @purchased_tracks.each do |track| %>
+				<li class="list-group-item clearfix">
+					<p class="pull-left"><%= track.name %></p>
+					<% if current_user.has_purchased?(track) %>
+						<a href="<%= cloudinary_url(track.name + '.mp3', resource_type: 'video') %>" class="track-download-link pull-right" download>
+							<i class="glyphicon glyphicon-download"></i>
+						</a>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>

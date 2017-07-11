@@ -2,13 +2,13 @@ class ChargesController < ApplicationController
 	def new
 		@order = current_order
 		@order_items = @order.order_items
-		@amount = @order.subtotal * 100
+		@amount = @order.stripe_amount
 	end
 
 	def create
 		@order = current_order
 		@amount = @order.subtotal
-		@amount_in_pence = (@amount * 100).to_i
+		@amount_in_pence = @order.stripe_amount
 
 		customer = Stripe::Customer.create(
 				email: params[:stripeEmail],

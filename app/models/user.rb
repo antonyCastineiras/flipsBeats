@@ -14,7 +14,7 @@ class User < ApplicationRecord
   	completed_orders.collect {|order| 
   		order.order_items.collect {|order_item| 
   			order_item.track }
-  	}.uniq.flatten
+  	}.flatten.uniq
   end
 
   def has_purchased?(track)

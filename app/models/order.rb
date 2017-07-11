@@ -9,6 +9,10 @@ class Order < ApplicationRecord
   	order_items.collect {|oi| oi.valid? ? oi.unit_price : 0 }.sum
   end
 
+  def stripe_amount
+    (subtotal * 100).to_i
+  end
+
 	private
 
   def set_order_status
