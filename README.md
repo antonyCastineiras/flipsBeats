@@ -1,24 +1,7 @@
-# README
+# Flipsbeats
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the start of a small platform for a friend of mine to sell his music. It allows an admin to upload there own music and set a price that they wish to sell the track for. The site is intergrated with stripe for the processing of payments.
 
-Things you may want to cover:
+To crete an admin account vist '/admin'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I am currently waiting on designs for the front end but a working demo can be found here [flipsbeats.herokuapp.com](hhtps://flipsbeats.herokuapp.com)
