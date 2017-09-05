@@ -4,4 +4,4 @@ This is the start of a small platform for a friend of mine to sell his music. It
 
 To crete an admin account vist '/admin'
 
-I am currently waiting on designs for the front end but a working demo can be found here [flipsbeats.herokuapp.com](hhtps://flipsbeats.herokuapp.com)
+I am currently waiting on designs for the front end but a working demo can be found here [flipsbeats.herokuapp.com](https://flipsbeats.herokuapp.com)
